@@ -1,0 +1,20 @@
+class Solution {
+public:
+    int removeDuplicates(vector<int>& nums) {
+        
+        //Used Approach is Two Pointer learned from Youtube
+        
+        //initialize i=0 && j=1
+        //if the value matches then j++ else i++ and copies the value of j into i and then return the first uniques elements of array.
+        
+        int i=0;                                     
+        for(int j=1;j<nums.size();j++)
+        {
+            if(nums[j]!=nums[i])
+                i++;
+            
+            nums[i]=nums[j];
+        }
+        return i+1;
+    }
+};
